@@ -1,39 +1,72 @@
-<!-- 
+<!--
 This README describes the package. If you publish this package to pub.dev,
 this README's contents appear on the landing page for your package.
 
 For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
+[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
 
 For general information about developing packages, see the Dart guide for
 [creating packages](https://dart.dev/guides/libraries/create-library-packages)
 and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
+[developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+# Cash Field
 
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+A package that aims to help you handling cash value input with `addDigit` and `removeDigit`. It's also part of a blog series on my personal blog about how to create and publish pub.dev packages. See more on [my website](yanncabral.com.br).
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Install cash_field with pub using
+
+```bash
+flutter pub add cash_field
+```
+
+or just add to your pubspec.yaml
+
+```bash
+dependencies:
+    cash_field: ^0.0.1
+```
 
 ## Usage
 
 TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+to `/example` folder.
 
 ```dart
-const like = 'sample';
+void main() {
+  // Create a controller
+  final controller = CashFieldController();
+
+  // Add a digit when the user taps a number button
+  controller.addDigit(1);
+
+  // Remove a digit when the user taps the backspace button
+  controller.removeDigit();
+
+  // Get the current value
+  final value = controller.state.value;
+
+  // Get the current value as a double
+  final valueAsDouble = controller.state.valueAsDouble;
+
+  // Get the current value as a string
+  final valueAsString = controller.state.display;
+
+  // Get the current decimal digits
+  final decimalDigits = controller.state.decimalDigits;
+
+  // Get the current symbol
+  final symbol = controller.state.symbol;
+
+  // Update the value when the user taps the clear button
+  controller.updateValue(0);
+
+  // Print the current state
+  print(
+    'value: $value, valueAsDouble: $valueAsDouble, valueAsString: $valueAsString, decimalDigits: $decimalDigits, symbol: $symbol',
+  );
+}
 ```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
