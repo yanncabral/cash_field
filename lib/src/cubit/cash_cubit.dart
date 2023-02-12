@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:cash_field/src/cubit/cash_state.dart';
 
-///
 class CashCubit extends Cubit<CashState> {
   /// Create a new [CashCubit] with an optional [initialValue] and
   /// [decimalDigits].
