@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:equatable/equatable.dart';
 import 'package:intl/intl.dart';
 
@@ -13,7 +15,7 @@ class CashState extends Equatable {
   final int decimalDigits;
   final String symbol;
 
-  double get valueAsDouble => value / decimalDigits;
+  double get valueAsDouble => value / pow(10, decimalDigits);
 
   String get display => NumberFormat.simpleCurrency(
         decimalDigits: decimalDigits,
