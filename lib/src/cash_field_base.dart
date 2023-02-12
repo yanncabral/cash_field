@@ -1,6 +1,13 @@
-// TODO: Put public facing types in this file.
+import 'package:cash_field/src/cubit/cash_cubit.dart';
 
-/// Checks if you are awesome. Spoiler: you are.
-class Awesome {
-  bool get isAwesome => true;
+/// A [CashFieldController] can be used to update the current state of [CashBuilder]
+/// and [CashField] widgets.
+class CashFieldController extends CashCubit {
+  CashFieldController({
+    int initialValue = 0,
+    int decimalDigits = 2,
+  }) : super(
+          initialValue: initialValue,
+          decimalDigits: decimalDigits,
+        );
 }
