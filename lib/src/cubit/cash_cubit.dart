@@ -25,4 +25,13 @@ class CashCubit extends Cubit<CashState> {
     final newValue = state.value ~/ 10;
     emit(state.copyWith(value: newValue));
   }
+
+  /// Update the current value.
+  void updateValue(int value) {
+    if (value < 0) {
+      throw ArgumentError('Value must be greater than or equal to 0.');
+    }
+
+    emit(state.copyWith(value: value));
+  }
 }
