@@ -1,6 +1,6 @@
 name: cash_field
 description: A simple package to hold cash input value.
-version: 0.0.1
+version: 0.0.2
 repository: https://github.com/yanncabral/cash_field
 
 environment:
